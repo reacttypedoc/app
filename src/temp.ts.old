@@ -1,0 +1,31 @@
+export interface Flags {
+    isExported?: boolean;
+    isPrivate?: boolean;
+    isPublic?: boolean;
+    isProtected?: boolean;
+    isStatic?: boolean;
+    isOptional?: boolean;
+    isRest?: boolean;
+}
+
+export interface Type {
+    declaration?: Declaration;
+    elementType?: ElementType;
+    id?: number;
+    name: string;
+    type: string;
+    typeArguments?: TypeArgument[];
+    types?: Type[];
+    value?: string;
+}
+
+export interface Tag {
+    tag: string;
+    text: string;
+}
+
+export interface Comment {
+    shortText?: string;
+    tags?: Tag[];
+    text?: string;
+}

@@ -1,0 +1,369 @@
+export interface ElementType {
+    type: string;
+    name: string;
+    id?: number;
+}
+
+export interface Parameter2 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags;
+    type: Type2;
+}
+
+export interface TypeArgument2 {
+    type: string;
+    types: Type6[];
+}
+
+export interface Signature2 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    parameters: Parameter2[];
+    type: Type3;
+}
+
+export interface Source {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Declaration {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    signatures: Signature2[];
+    sources: Source[];
+}
+
+export interface Parameter {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    comment: Comment;
+    type: Type;
+    defaultValue: string;
+}
+
+export interface Overwrites {
+    type: string;
+    name: string;
+    id: number;
+}
+
+export interface InheritedFrom {
+    type: string;
+    name: string;
+}
+
+export interface Signature {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    comment: Comment;
+    parameters: Parameter[];
+    type: Type5;
+    overwrites: Overwrites;
+    inheritedFrom: InheritedFrom;
+}
+
+export interface Source2 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Parameter3 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    type: Type8;
+}
+
+
+export interface Signature3 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    parameters: Parameter3[];
+    type: Type9;
+}
+
+export interface Source3 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Declaration2 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    signatures: Signature3[];
+    sources: Source3[];
+}
+
+export interface Parameter4 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    type: Type11;
+}
+
+export interface Signature4 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    parameters: Parameter4[];
+    type: Type12;
+}
+
+export interface Source4 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Declaration3 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    signatures: Signature4[];
+    sources: Source4[];
+}
+
+
+
+export interface Overwrites2 {
+    type: string;
+    name: string;
+    id: number;
+}
+
+export interface InheritedFrom2 {
+    type: string;
+    name: string;
+    id: number;
+}
+
+
+
+export interface Parameter5 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    type: Type13;
+}
+
+
+export interface Signature5 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    parameters: Parameter5[];
+    type: Type14;
+}
+
+export interface Source5 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Child4 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    signatures: Signature5[];
+    sources: Source5[];
+}
+
+export interface Group {
+    title: string;
+    kind: number;
+    children: number[];
+}
+
+export interface Child3 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    comment: Comment;
+    signatures: Signature[];
+    sources: Source2[];
+    type: Type7;
+    defaultValue: string;
+    overwrites: Overwrites2;
+    inheritedFrom: InheritedFrom2;
+    children: Child4[];
+    groups: Group[];
+}
+
+export interface Group2 {
+    title: string;
+    kind: number;
+    children: number[];
+}
+
+export interface Source6 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface ExtendedBy {
+    type: string;
+    name: string;
+    id: number;
+}
+
+export interface ExtendedType {
+    type: string;
+    name: string;
+    id: number;
+}
+
+export interface Source7 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Child5 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    sources: Source7[];
+    type: Type16;
+}
+
+export interface Group3 {
+    title: string;
+    kind: number;
+    children: number[];
+}
+
+export interface Source8 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Parameter6 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    type: Type18;
+}
+
+export interface Signature6 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    parameters: Parameter6[];
+    type: Type19;
+}
+
+export interface Declaration4 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    children: Child5[];
+    groups: Group3[];
+    sources: Source8[];
+    signatures: Signature6[];
+}
+
+export interface Child2 {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    children: Child3[];
+    groups: Group2[];
+    sources: Source6[];
+    extendedBy: ExtendedBy[];
+    extendedTypes: ExtendedType[];
+    type: Type15;
+    defaultValue: string;
+}
+
+export interface Group4 {
+    title: string;
+    kind: number;
+    children: number[];
+}
+
+export interface Source9 {
+    fileName: string;
+    line: number;
+    character: number;
+}
+
+export interface Child {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: Flags
+    originalName: string;
+    children: Child2[];
+    groups: Group4[];
+    sources: Source9[];
+}
+
+export interface Group5 {
+    title: string;
+    kind: number;
+    children: number[];
+}
+
+export interface RootObject {
+    id: number;
+    name: string;
+    kind: number;
+    flags: Flags
+    children: Child[];
+    groups: Group5[];
+}
