@@ -1,5 +1,5 @@
 {
-  "name": "@typedoc-react/housing",
+  "name": "@reacttypedoc/housing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,5 +27,7 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "author": "Zachary Kohnen (DusterTheFirst)",
+  "license": "GPL-3.0"
 }
