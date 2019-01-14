@@ -1,0 +1,78 @@
+# CircleCI Jobs
+
+version: 2
+jobs:
+    install-deps:
+        docker:
+            - image: circleci/node:latest
+        steps:
+            - checkout
+            - restore_cache:
+                key: dependency-cache-{{ checksum "package-lock.json" }}
+            - run:
+                name: Update NPM
+                command: sudo npm i -g npm@latest
+            - run: 
+                name: Install Dependencies
+                command: npm ci
+            - run:
+                name: Audit
+                command: npm audit
+            - save_cache:
+                paths:
+                    - node_modules
+                    - package-lock.json
+                    - ~/.npm
+                key: dependency-cache-{{ checksum "package-lock.json" }}
+            - persist_to_workspace:
+                    root: "."
+                    paths:
+                        - node_modules
+                        - package-lock.json
+                        
+    test:
+        docker:
+            - image: circleci/node:latest
+        steps:
+            - checkout
+            - attach_workspace:
+                at: "."
+            - run:
+                name: Run Jest Tests
+                command: npm run test -s
+                
+    build:
+        docker:
+            - image: circleci/node:latest
+        steps:
+            - checkout
+            - attach_workspace:
+                at: "."
+            - run:
+                name: Build the react app
+                command npm run build -s
+                
+    lint:
+        docker:
+            - image: circleci/node:latest
+        steps:
+            - checkout
+            - attach_workspace:
+                at: "."
+            - run:
+                name: Run tslint over the react app
+                command npm run lint -s
+                
+workflows:
+    version: 2
+    test-lint-build:
+        - install-deps
+        - build:
+            requires:
+                install-deps
+        - test:
+            requires:
+                build
+        - lint:
+            requires:
+                build
