@@ -69,10 +69,10 @@ workflows:
         - install-deps
         - build:
             requires:
-                install-deps
+                - install-deps
         - test:
             requires:
-                build
+                - build
         - lint:
             requires:
-                build
+                - build
