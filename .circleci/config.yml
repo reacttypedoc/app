@@ -66,13 +66,14 @@ jobs:
 workflows:
     version: 2
     test-lint-build:
-        - install-deps
-        - build:
-            requires:
-                - install-deps
-        - test:
-            requires:
-                - build
-        - lint:
-            requires:
-                - build
+        jobs:
+            - install-deps
+            - build:
+                requires:
+                    - install-deps
+            - test:
+                requires:
+                    - build
+            - lint:
+                requires:
+                    - build
