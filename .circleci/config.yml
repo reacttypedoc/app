@@ -50,7 +50,7 @@ jobs:
                 at: "."
             - run:
                 name: Build the react app
-                command npm run build -s
+                command: npm run build -s
                 
     lint:
         docker:
