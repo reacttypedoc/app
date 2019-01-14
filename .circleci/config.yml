@@ -61,7 +61,7 @@ jobs:
                 at: "."
             - run:
                 name: Run tslint over the react app
-                command npm run lint -s
+                command: npm run lint -s
                 
 workflows:
     version: 2
